@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Wall Generator</title>
+    <link rel="shortcut icon" type="image/x-icon" href="Images/image2.png"/>
+    <style>
+        body {
+            text-align: center;
+            font-family: Arial, sans-serif;
+        }
+
+        /* Wall container */
+        .wall {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(30px, 1fr));
+            gap: 5px;
+            max-width: 50%;
+            margin: 20px auto;
+        }
+
+        /* Bricks in the wall */
+        .brick {
+            width: 100%;
+            padding-top: 100%;
+            cursor: pointer;
+        }
+
+        /* First section of the page */
+        .div1 {
+            background: linear-gradient(rgba(45, 40, 40, 0.796), rgba(22, 21, 21, 0.778)), url("Images/image1.png") no-repeat fixed bottom / cover;
+            min-height: 50vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            text-align: center;
+            color: white;
+        }
+
+        /* Text in the first section */
+        .div1-text {
+            color: #f8f0e5;
+            font-size: 46px;
+            font-family: 'Times New Roman', serif;
+            text-shadow: 3px 3px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        /* Second section of the page */
+        .div2 {
+            height: 100%;
+            width: 100%;
+            background-color: #c4bbaf;
+        }
+
+        /* Text in the second section */
+        .div2-text {
+            font-size: 27px;
+            font-family: 'Times New Roman', serif;
+        }
+
+        /* Home and Diagonal buttons */
+        a:link, a:visited {
+            background-color: #c1bdb3;
+            color: black;
+            padding: 14px 25px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            border-radius: 8px;
+        }
+
+        a:hover, a:active {
+            background-color: #c7c3ba;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        /* Generate button */
+        #generateButton {
+            background-color: #5e503f;
+            border: none;
+            color: white;
+            padding: 16px 32px;
+            border-radius: 12px;
+        }
+
+        #generateButton:hover {
+            background-color: #6d5d49;
+            box-shadow: 0 12px 16px 0 rgba(0,0,0,0.24), 0 17px 50px 0 rgba(0,0,0,0.19);
+        }
+
+        /* Input fields for width, height, and color count */
+        #width, #height, #color {
+            width: 20%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            box-sizing: border-box;
+        }
+    </style>
+</head>
+
+<body>
+    <!-- First section of the page -->
+    <div class="div1">
+        <h1 class="div1-text">Generate your wall !</h1><br>
+        <!-- Link to the diagonal page -->
+        <a href="diagonal.html">Go to Diagonal Page</a>
+    </div>
+
+    <!-- Second section of the page -->
+    <div class="div2">
+        <br>
+        <h2 class="div2-text">Select your wall dimensions</h2>
+        <!-- Input field for wall width, height and color count -->
+        <label for="width">Width:</label>
+        <input type="number" id="width" min="1" value="8">
+        <label for="height">Height:</label>
+        <input type="number" id="height" min="1" value="8">
+        <label for="color">Color Count:</label>
+        <input type="number" id="color" min="1" value="5">
+        <br><br>
+        <!-- Button to generate the wall -->
+        <button id="generateButton">Generate</button>
+        <!-- Container for displaying the generated wall -->
+        <div class="wall" id="wall"></div>
+        <br>
+    </div>
+
+    <!-- JavaScript script reference -->
+    <script src="script_i.js"></script>
+</body>
+</html>
